@@ -22,7 +22,7 @@ public partial class FrmFilterMaxMin : Form
         int max = Convert.ToInt32(txtMax.Text);
         int min = Convert.ToInt32(txtMin.Text);
 
-        NorthwndContext dbcontext = new NorthwndContext();
-        List<Product> products = dbcontext.Products.Where(x => x.UnitPrice > min && x.UnitPrice < max).OrderBy(x => x.UnitPrice).ToList();
+        NorthwndContext db = new NorthwndContext();
+        List<Product> products = db.Products.Where(x => x.UnitPrice > min && x.UnitPrice < max).OrderBy(x => x.UnitPrice).ToList();
     }
 }
