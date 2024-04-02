@@ -24,5 +24,7 @@ public partial class FrmFilterMaxMin : Form
 
         NorthwndContext db = new NorthwndContext();
         List<Product> products = db.Products.Where(x => x.UnitPrice > min && x.UnitPrice < max).OrderBy(x => x.UnitPrice).ToList();
+
+        dtGridProducts.DataSource = products;
     }
 }
