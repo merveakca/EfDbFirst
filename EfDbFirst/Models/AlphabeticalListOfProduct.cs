@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace EfDbFirst.Models;
 
 public partial class AlphabeticalListOfProduct
 {
+    [Key]
     public int ProductId { get; set; }
 
     public string ProductName { get; set; } = null!;

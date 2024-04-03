@@ -62,7 +62,6 @@ partial class FrmFilterMaxMin
         txtMin.Name = "txtMin";
         txtMin.Size = new Size(260, 61);
         txtMin.TabIndex = 2;
-        txtMin.Text = "Min:";
         // 
         // txtMax
         // 
@@ -71,7 +70,6 @@ partial class FrmFilterMaxMin
         txtMax.Name = "txtMax";
         txtMax.Size = new Size(260, 61);
         txtMax.TabIndex = 3;
-        txtMax.Text = "Max:";
         // 
         // FrmFilterMaxMin
         // 
