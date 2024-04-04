@@ -22,6 +22,7 @@ public partial class FrmAddProduct : Form
         NorthwndContext db = new NorthwndContext();
         List<Category> categories = db.Categories.ToList();
         cmbCategory.DataSource = categories;
+
         cmbCategory.DisplayMember = "CategoryName";
         cmbCategory.ValueMember = "CategoryId";
     }
