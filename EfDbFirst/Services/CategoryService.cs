@@ -20,6 +20,30 @@ public class CategoryService
         NorthwndContext db = new NorthwndContext();
         List<Category> categories = db.Categories.OrderBy(q => q.CategoryName).ToList();
         return categories;
-
     }
+
+    //dışarıdan id alan va o id'ye ait kategoriyi silen metot
+    public void DeleteCategory(int id)
+    {
+        NorthwndContext db = new NorthwndContext();
+        Category category = db.Categories.FirstOrDefault(x => x.CategoryId == id);
+
+        if (category != null)
+        {
+            db.Categories.Remove(category);
+            db.SaveChanges();
+        }
+    }
+
+    //dışarıdan id alan va o id'ye ait kategoriyi döndüren metot
+    public Category GetCategoryById(int id)
+    {
+        NorthwndContext db = new NorthwndContext();
+        Category category = db.Categories.FirstOrDefault(x => x.CategoryId == id);
+        return category;
+    }
+
+
+
+
 }

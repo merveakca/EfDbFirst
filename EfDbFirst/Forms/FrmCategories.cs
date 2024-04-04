@@ -22,4 +22,21 @@ public partial class FrmCategories : Form
         CategoryService categoryService = new CategoryService();
         dgwCategories.DataSource = categoryService.GetAllCategories();
     }
+
+    private void btnDelete_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            int selectedCategoryId = (int)dgwCategories.CurrentRow.Cells[0].Value;
+
+            CategoryService categoryService = new CategoryService();
+            categoryService.DeleteCategory(selectedCategoryId);
+            dgwCategories.DataSource = categoryService.GetAllCategories();
+        }
+        catch (Exception ex)
+        {
+
+            MessageBox.Show(ex.Message);
+        }
+    }
 }

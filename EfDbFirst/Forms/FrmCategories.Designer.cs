@@ -29,23 +29,36 @@ partial class FrmCategories
     private void InitializeComponent()
     {
         dgwCategories = new DataGridView();
+        btnDelete = new Button();
         ((System.ComponentModel.ISupportInitialize)dgwCategories).BeginInit();
         SuspendLayout();
         // 
         // dgwCategories
         // 
         dgwCategories.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dgwCategories.Location = new Point(12, 52);
+        dgwCategories.Location = new Point(12, 109);
         dgwCategories.Name = "dgwCategories";
         dgwCategories.RowHeadersWidth = 62;
-        dgwCategories.Size = new Size(1273, 580);
+        dgwCategories.Size = new Size(1273, 523);
         dgwCategories.TabIndex = 0;
+        // 
+        // btnDelete
+        // 
+        btnDelete.BackColor = Color.IndianRed;
+        btnDelete.Location = new Point(12, 42);
+        btnDelete.Name = "btnDelete";
+        btnDelete.Size = new Size(150, 45);
+        btnDelete.TabIndex = 1;
+        btnDelete.Text = "Delete";
+        btnDelete.UseVisualStyleBackColor = false;
+        btnDelete.Click += btnDelete_Click;
         // 
         // FrmCategories
         // 
         AutoScaleDimensions = new SizeF(10F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(1297, 658);
+        Controls.Add(btnDelete);
         Controls.Add(dgwCategories);
         Name = "FrmCategories";
         Text = "FrmCategories";
@@ -57,4 +70,5 @@ partial class FrmCategories
     #endregion
 
     private DataGridView dgwCategories;
+    private Button btnDelete;
 }
