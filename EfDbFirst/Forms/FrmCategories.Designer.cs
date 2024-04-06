@@ -30,6 +30,11 @@ partial class FrmCategories
     {
         dgwCategories = new DataGridView();
         btnDelete = new Button();
+        label1 = new Label();
+        txtName = new TextBox();
+        txtDescription = new TextBox();
+        label2 = new Label();
+        btnUpdate = new Button();
         ((System.ComponentModel.ISupportInitialize)dgwCategories).BeginInit();
         SuspendLayout();
         // 
@@ -39,8 +44,9 @@ partial class FrmCategories
         dgwCategories.Location = new Point(12, 109);
         dgwCategories.Name = "dgwCategories";
         dgwCategories.RowHeadersWidth = 62;
-        dgwCategories.Size = new Size(1273, 523);
+        dgwCategories.Size = new Size(701, 523);
         dgwCategories.TabIndex = 0;
+        dgwCategories.CellClick += dgwCategories_CellClick;
         // 
         // btnDelete
         // 
@@ -53,11 +59,57 @@ partial class FrmCategories
         btnDelete.UseVisualStyleBackColor = false;
         btnDelete.Click += btnDelete_Click;
         // 
+        // label1
+        // 
+        label1.AutoSize = true;
+        label1.Location = new Point(926, 137);
+        label1.Name = "label1";
+        label1.Size = new Size(59, 25);
+        label1.TabIndex = 2;
+        label1.Text = "Name";
+        // 
+        // txtName
+        // 
+        txtName.Location = new Point(1051, 131);
+        txtName.Name = "txtName";
+        txtName.Size = new Size(212, 31);
+        txtName.TabIndex = 3;
+        // 
+        // txtDescription
+        // 
+        txtDescription.Location = new Point(1051, 205);
+        txtDescription.Name = "txtDescription";
+        txtDescription.Size = new Size(212, 31);
+        txtDescription.TabIndex = 5;
+        // 
+        // label2
+        // 
+        label2.AutoSize = true;
+        label2.Location = new Point(926, 211);
+        label2.Name = "label2";
+        label2.Size = new Size(102, 25);
+        label2.TabIndex = 4;
+        label2.Text = "Description";
+        // 
+        // btnUpdate
+        // 
+        btnUpdate.Location = new Point(1151, 275);
+        btnUpdate.Name = "btnUpdate";
+        btnUpdate.Size = new Size(112, 34);
+        btnUpdate.TabIndex = 6;
+        btnUpdate.Text = "Update";
+        btnUpdate.UseVisualStyleBackColor = true;
+        // 
         // FrmCategories
         // 
         AutoScaleDimensions = new SizeF(10F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(1297, 658);
+        ClientSize = new Size(1551, 678);
+        Controls.Add(btnUpdate);
+        Controls.Add(txtDescription);
+        Controls.Add(label2);
+        Controls.Add(txtName);
+        Controls.Add(label1);
         Controls.Add(btnDelete);
         Controls.Add(dgwCategories);
         Name = "FrmCategories";
@@ -65,10 +117,16 @@ partial class FrmCategories
         Load += FrmCategories_Load;
         ((System.ComponentModel.ISupportInitialize)dgwCategories).EndInit();
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
 
     private DataGridView dgwCategories;
     private Button btnDelete;
+    private Label label1;
+    private TextBox txtName;
+    private TextBox txtDescription;
+    private Label label2;
+    private Button btnUpdate;
 }

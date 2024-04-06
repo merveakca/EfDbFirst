@@ -1,4 +1,5 @@
-﻿using EfDbFirst.Services;
+﻿using EfDbFirst.Models;
+using EfDbFirst.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,5 +39,16 @@ public partial class FrmCategories : Form
 
             MessageBox.Show(ex.Message);
         }
+    }
+
+    private void dgwCategories_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+        int selectedCategoryId = (int)dgwCategories.CurrentRow.Cells[0].Value;
+
+        CategoryService categoryService = new CategoryService();
+        Category category = categoryService.GetCategoryById(selectedCategoryId);
+
+        txtName.Text = category.CategoryName;
+        txtDescription.Text = category.Description;
     }
 }
